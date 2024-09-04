@@ -4,6 +4,7 @@
 ## Testes para vaga de Estágio
 
 ## Descrição
+**Todas as soluções foram desenvolvidas em formato de API REST e acompanham uma pagina html estilizada pronta para consumir a API.**
 - billings-api: programa que realiza calculos a cerca do faturamento (media, dias acima da media, maior e menor).
 - calculation-api: programa para calcular a soma a partir de um loop.
 - fibonacci-api: programa para calcular fibonacci.
