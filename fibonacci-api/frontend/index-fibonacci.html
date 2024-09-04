@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste para Vaga de Estágio - Target Sistemas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        h1 {
+            color: #0275d8;
+        }
+
+        p {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+
+        input[type="number"] {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        button {
+            background-color: #0275d8;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #025aa5;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Teste para Vaga de Estágio - Target Sistemas</h1>
+        <p>Insira um número para verificar se ele pertence à sequência de Fibonacci:</p>
+        <input type="number" id="numberInput" placeholder="Digite um número">
+        <button onclick="checkFibonacci()">Verificar</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function checkFibonacci() {
+            const number = document.getElementById('numberInput').value;
+            const apiUrl = `http://localhost:8080/is-fibonacci?number=${number}`;
+
+            fetch(apiUrl)
+                .then(response => response.text())
+                .then(result => {
+                    document.getElementById('result').textContent = result;
+                })
+                .catch(error => {
+                    console.error('Erro ao chamar a API:', error);
+                    document.getElementById('result').textContent = 'Ocorreu um erro ao verificar o número.';
+                });
+        }
+    </script>
+</body>
+</html>

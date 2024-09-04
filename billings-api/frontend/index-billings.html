@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste para Vaga de Estágio - Target Sistemas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            color: #0275d8;
+        }
+
+        p {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+
+        button {
+            background-color: #0275d8;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #025aa5;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Teste para Vaga de Estágio - Target Sistemas</h1>
+        <p>Pressione o botão abaixo para calcular as estatísticas de faturamento.</p>
+        <button onclick="calculateRevenueStatistics()">Calcular Estatísticas</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function calculateRevenueStatistics() {
+            // URL do endpoint da API
+            const apiUrl = 'http://localhost:8080/revenue/statistics';
+
+            // Fazendo a requisição GET para a API
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    // Exibindo o resultado na tela
+                    document.getElementById('result').innerHTML = `
+                        <p>Menor Faturamento: R$ ${data.min.toFixed(2)}</p>
+                        <p>Maior Faturamento: R$ ${data.max.toFixed(2)}</p>
+                        <p>Dias Acima da Média: ${data.daysAboveAverage} dias</p>
+                    `;
+                })
+                .catch(error => {
+                    console.error('Erro ao chamar a API:', error);
+                    document.getElementById('result').textContent = 'Ocorreu um erro ao calcular as estatísticas.';
+                });
+        }
+    </script>
+</body>
+</html>

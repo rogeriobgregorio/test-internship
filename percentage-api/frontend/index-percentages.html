@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste para Vaga de Estágio - Target Sistemas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            color: #0275d8;
+        }
+
+        p {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+
+        button {
+            background-color: #0275d8;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #025aa5;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .result-item {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Teste para Vaga de Estágio - Target Sistemas</h1>
+        <p>Pressione o botão abaixo para calcular o percentual de faturamento por estado.</p>
+        <button onclick="calculatePercentages()">Calcular Percentuais</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function calculatePercentages() {
+  
+            const apiUrl = 'http://localhost:8080/revenue/percentages';
+
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    const formatPercentage = (value) => value.toFixed(2);
+
+                    // Exibindo o resultado na tela
+                    const resultDiv = document.getElementById('result');
+                    resultDiv.innerHTML = `
+                        <div class="result-item">São Paulo (SP): ${formatPercentage(data.SP)}%</div>
+                        <div class="result-item">Rio de Janeiro (RJ): ${formatPercentage(data.RJ)}%</div>
+                        <div class="result-item">Minas Gerais (MG): ${formatPercentage(data.MG)}%</div>
+                        <div class="result-item">Espírito Santo (ES): ${formatPercentage(data.ES)}%</div>
+                        <div class="result-item">Outros: ${formatPercentage(data.Outros)}%</div>
+                    `;
+                })
+                .catch(error => {
+                    console.error('Erro ao chamar a API:', error);
+                    document.getElementById('result').textContent = 'Ocorreu um erro ao calcular os percentuais.';
+                });
+        }
+    </script>
+</body>
+</html>
