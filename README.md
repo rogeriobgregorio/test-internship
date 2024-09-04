@@ -11,6 +11,17 @@
 - invertcharacters-api: programa para inverter caracteres.
 - percentage-api: programa para calcular as porcentagens do faturamento.
 
+## Screenshots
+![billings-api](https://github.com/rogeriobgregorio/test-internship/blob/main/screenshots/faturamento.png)
+
+![calculation-api](https://github.com/rogeriobgregorio/test-internship/blob/main/screenshots/soma.png)
+
+![fibonacci-api](https://github.com/rogeriobgregorio/test-internship/blob/main/screenshots/fibonacci.png)
+
+![invertcharacters-api](https://github.com/rogeriobgregorio/test-internship/blob/main/screenshots/inverter.png)
+
+![percentage-api](https://github.com/rogeriobgregorio/test-internship/blob/main/screenshots/porcentagem.png)
+
 ## Stack utilizada
 
 **Back-end:** 
