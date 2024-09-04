@@ -1,11 +1,11 @@
 # Desafio Target Sistemas
 [![Status](https://img.shields.io/badge/Status-Concluído-brightgreen.svg)](https://github.com/seu-usuario/seu-projeto)
 
-##Testes para vaga de Estágio
+## Testes para vaga de Estágio
 
 ## Descrição
-- billings-api: programa que realiza calculos a cerca do faturamento.
-- calculation-api: programa para calcular a soma.
+- billings-api: programa que realiza calculos a cerca do faturamento (media, dias acima da media, maior e menor).
+- calculation-api: programa para calcular a soma a partir de um loop.
 - fibonacci-api: programa para calcular fibonacci.
 - invertcharacters-api: programa para inverter caracteres.
 - percentage-api: programa para calcular as porcentagens do faturamento.
