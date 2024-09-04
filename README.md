@@ -2,6 +2,7 @@
 [![Status](https://img.shields.io/badge/Status-Concluído-brightgreen.svg)](https://github.com/seu-usuario/seu-projeto)
 
 ## Testes para vaga de Estágio
+**Stack utilizada:** Java, Spring, HTML, CSS, Javascript.
 
 ## Descrição
 **Todas as soluções foram desenvolvidas em formato de API REST e acompanham uma pagina html estilizada pronta para consumir a API.**
@@ -21,17 +22,6 @@
 ![invertcharacters-api](https://github.com/rogeriobgregorio/test-internship/blob/main/screenshots/inverter.png)
 
 ![percentage-api](https://github.com/rogeriobgregorio/test-internship/blob/main/screenshots/porcentagem.png)
-
-## Stack utilizada
-
-**Back-end:** 
-- Java
-- Spring Boot
-
-**Front-end:** 
-- HTML5
-- CSS3
-- Javascript
 
   ## Rodando localmente
 
